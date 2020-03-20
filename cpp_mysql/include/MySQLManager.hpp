@@ -10,9 +10,9 @@
 #define MySQLManager_hpp
 
 #include <stdio.h>
+#include <string>
 // 引入mysql头文件
 #include <mysql.h>
-//#include "/usr/local/include/mysql/mysql.h"
 // 连接信息
 struct ConnectionInfo{
     ConnectionInfo():
@@ -39,15 +39,6 @@ public:
     //释放连接
     bool freeConnect();
     
-    // 增加数据
-    bool insertData(const char*sql);
-    
-    // 删除数据
-    bool deleteData(const char*sql);
-    
-    // 修改数据
-    bool alterData(const char*sql);
-    
     // 查数据
     MYSQL_RES* queryData(const char*sql);
     
@@ -61,7 +52,6 @@ private:
     MYSQL m_mysql;
     // 查询结果集
     MYSQL_RES *m_res;
-    int a;
 };
 
 #endif /* MySQLManager_hpp */
